@@ -1,8 +1,67 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 @import "bootstrap-icons/font/bootstrap-icons.css";
 
 body {
-  font-family: "Lato", sans-serif;
+  font-family: "Kanit", sans-serif;
   background-color: #f7f7f7;
+  margin: 0;
+  padding: 0;
+}
+.domain-card {
+  background-image: none;
+  transition: background-image 2s ease-in-out;
+}
+.domain-card:hover {
+  background-image: linear-gradient(
+    255.12deg,
+    #d3bb8a -1.47%,
+    rgba(211, 187, 138, 0) 100%
+  );
+  
+}
+.cubicTrans {
+  transition: background 500ms cubic-bezier(0.03, 0.28, 0.15, 0.96) !important;
+}
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+.btn-grd {
+  --gold: #d3bb8a;
+  position: relative;
+}
+.btn-grd::after,
+.btn-grd::before {
+  
+  content: "";
+  position: absolute;
+  height: 110%;
+  width: 102%;
+
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: -1;
+
+  background-image: conic-gradient(
+    from var(--angle),
+    transparent 80%,
+    var(--gold),transparent
+  );
+  border-radius: 50px;
+  animation: 3s spinRound linear infinite;
+}
+.btn-grd::before {
+  filter: blur(1.5rem);
+  opacity: 0.5;
+}
+@keyframes spinRound {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
+  }
 }

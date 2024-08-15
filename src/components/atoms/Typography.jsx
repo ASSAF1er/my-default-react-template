@@ -1,6 +1,3 @@
-import { ComponentProps } from "react";
-import { useTranslation } from "react-i18next";
-
 /**
  * Renders a typography component with the specified text, class name, and font weight.
  *
@@ -11,10 +8,9 @@ import { useTranslation } from "react-i18next";
  * @returns {React.ReactElement} - The rendered typography component.
  */
 export default function Typography({ text, className, id }) {
-  const { t } = useTranslation();
   return (
     <p className={` ${className}  `} id={id}>
-      {t(text)}
+      {text}
     </p>
   );
 }
